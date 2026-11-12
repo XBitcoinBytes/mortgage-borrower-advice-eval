@@ -11,7 +11,8 @@ Usage: python3 scripts/score.py judgments.jsonl
 """
 import json, sys, pathlib, collections
 root = pathlib.Path(__file__).resolve().parent.parent
-items = {json.loads(l)["id"]: json.loads(l) for l in (root/"items"/"v0.jsonl").read_text().splitlines() if l.strip()}
+VERSION = (root/"VERSION").read_text().strip()
+items = {json.loads(l)["id"]: json.loads(l) for l in (root/"items"/f"v{VERSION}.jsonl").read_text().splitlines() if l.strip()}
 W = {"high": 3, "medium": 2, "low": 1}
 rows = [json.loads(l) for l in open(sys.argv[1]) if l.strip()]
 agg = collections.defaultdict(lambda: collections.defaultdict(list))

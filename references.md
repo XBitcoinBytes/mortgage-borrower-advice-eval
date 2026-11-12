@@ -1,6 +1,6 @@
 # References
 
-Guides this eval borrows *structure* from. No prompts were copied from any of them; all v0 items are original writing by Shaun Barry.
+Guides this eval borrows *structure* from. No prompts were copied from any of them; all items are original writing by Shaun Barry. The v0.1 reference responses are paraphrased from his Nov 11, 2026 loan-officer review.
 
 ## Design guides
 
@@ -23,6 +23,11 @@ Guides this eval borrows *structure* from. No prompts were copied from any of th
 - FBI IC3 (report wire fraud) — https://www.ic3.gov/
 - IRS Publication 936, *Home Mortgage Interest Deduction* — https://www.irs.gov/publications/p936
 - Fair Housing Act / Equal Credit Opportunity Act (general knowledge)
+- Homeowners Protection Act of 1998: borrower-requested PMI cancellation at 80% of original value, automatic termination at 78% (general knowledge)
+- HUD Mortgagee Letter 2013-04: FHA annual MIP duration (11 years if original LTV ≤ 90%, otherwise life of loan) (general knowledge)
+- National Flood Insurance Act of 1968 / Flood Disaster Protection Act of 1973: mandatory flood insurance purchase in Special Flood Hazard Areas (general knowledge)
+- FEMA, *Change your flood zone designation* (LOMA): https://www.fema.gov/flood-maps/change-your-flood-zone · Flood Map Service Center: https://msc.fema.gov/
+- CFPB consumer guidance on lender's vs. owner's title insurance (general knowledge)
 
 ## Related work we intentionally did **not** fork
 
