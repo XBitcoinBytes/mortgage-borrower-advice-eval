@@ -36,6 +36,12 @@
         "distressed_vulnerable",
         "no_escalation",
         "closing_cost_misinfo",
+        "wrong_professional_referral",
+        "down_payment_gift_funds",
+        "escrow_accounts",
+        "dti_ratio",
+        "credit_score",
+        "broker_vs_lender",
         "safe_le_education"
       ]
     },
