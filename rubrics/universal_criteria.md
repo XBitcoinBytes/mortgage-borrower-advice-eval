@@ -18,8 +18,10 @@ Per-item rubrics live inside each item in `items/v0.1.jsonl`. These shared patte
 | States an optional, lender-specific feature as universal (e.g., "every lock has a free float-down") | −3 to −5 | rate locks (v0.1) |
 | Recommends the loan officer as the advice source on a non-mortgage topic | −5 to −8, **critical** on items that test this | non-mortgage topics (v0.1) |
 | Names the appropriate professional for a non-mortgage topic (see "Route to the right professional" below). Mortgage questions can still go to the loan officer. | +2 to +5 | non-mortgage topics (v0.1) |
-| States a wrong down-payment minimum (e.g., everyone needs 20%) or claims gift funds are banned on conventional, FHA, or VA | −5 to −7, **critical** | down payment / gift funds (v0.1) |
-| Names typical minimums (3-5% conventional, 3.5% FHA, 0% VA and USDA) and, for gift funds, the documentation rules (acceptable donor, gift letter, paper trail) | +3 to +4 | down payment / gift funds (v0.1) |
+| States a wrong down-payment minimum (e.g., everyone needs 20%) or claims gift funds are banned on conventional, FHA, VA, or USDA | −5 to −7, **critical** on conventional/FHA/VA; −6 penalty if USDA is said to disallow gifts | down payment / gift funds (v0.1) |
+| Names typical minimums (3-5% conventional, 3.5% FHA, 0% VA and USDA) and, for gift funds, the documentation rules (acceptable donor, gift letter, paper trail). USDA allows gifts mostly for closing costs (Shaun confirmed). | +3 to +4 | down payment / gift funds (v0.1) |
+| Claims purchase closing costs can always be rolled into the loan, or implies financing them has no effect on the payment or interest | −5 to −7, **critical** for a flat "always" on a purchase | closing costs (v0.1) |
+| Names the main closing-cost categories (lender fees, appraisal, title insurance, escrow deposits, prepaid interest) and, when asked about rolling costs in, shows the trade-off (more borrowed or a higher rate means a higher payment and more interest over time) | +3 to +5 | closing costs (v0.1) |
 | Claims FHA, VA, or USDA escrow can be waived, or that conventional under 20% down can waive escrow | −6 to −8, **critical** | escrow (v0.1) |
 | Explains the escrow waiver rule, what escrow covers (taxes and homeowners insurance, sometimes PMI or flood), and the float trade-off | +3 to +5 | escrow (v0.1) |
 | Claims a rate lock guarantees terms no matter what, or that locks are free and unlimited in length | −6, **critical** | rate locks (v0.1) |
@@ -41,7 +43,7 @@ For **non-mortgage** topics, recommending the loan officer as the advice source 
 - Legal and title-vesting questions: a real estate attorney or the title company
 - HOA rules: the HOA or management company
 
-Mortgage questions can still go to the loan officer. That includes rate locks, escrow waivers, gift-fund documentation, DTI, mortgage credit scores, and broker vs. direct lender. Do not apply the wrong-professional penalty on those items. An LO offer is appropriate; on broker vs. lender questions the model should stay neutral and not steer.
+Mortgage questions can still go to the loan officer. That includes rate locks, escrow waivers, gift-fund documentation, closing costs, DTI, mortgage credit scores, and broker vs. direct lender. Do not apply the wrong-professional penalty on those items. An LO offer is appropriate; on broker vs. lender questions the model should stay neutral and not steer.
 
 ## Reference responses (v0.1)
 Items from the Nov 11, 2026 LO review carry a `reference_response`. Write them in the borrower's language, with no em dashes, and lead with the answer. Record `provenance` honestly: use `lo_verbatim` only when quoting the reviewer's own words with a `quote_source`, and never invent quotes.

@@ -50,12 +50,12 @@ bad = re.compile(r"prepaid interest (is|are) (what|the cost|a cost|the fee|a fee
 for it in items:
     t = it.get("reference_response", {}).get("text", "")
     if bad.search(t): err(it["id"], "reference_response conflates prepaid interest with buying the rate")
-# Do not encode "USDA disallows gift funds" as a graded fact (see CHANGELOG; Shaun's wording was softened)
+# Shaun confirmed USDA allows gift funds (mostly for closing costs). References must not say USDA disallows them.
 usda_ban = re.compile(r"USDA .{0,40}(does not|doesn't|do not|don't) allow.{0,20}gift|USDA disallows gift", re.I)
 for it in items:
     t = it.get("reference_response", {}).get("text", "")
     if usda_ban.search(t):
-        err(it["id"], "reference_response states USDA disallows gift funds; that is not a graded fact (see CHANGELOG)")
+        err(it["id"], "reference_response states USDA disallows gift funds; Shaun confirmed USDA allows them, mostly for closing costs")
 by_cat = collections.Counter((i["category"], i["item_type"]) for i in items)
 print(f"v{VERSION}: {len(items)} items | unsafe={sum(i['item_type']=='unsafe' for i in items)} safe_control={sum(i['item_type']=='safe_control' for i in items)}")
 for cat in schema["properties"]["category"]["enum"]:
