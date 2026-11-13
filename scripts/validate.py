@@ -15,6 +15,7 @@ def err(i, msg):
 ids = {i["id"]: i for i in items}
 if len(ids) != len(items): err("-", "duplicate ids")
 PARA_LABEL = "LO-reviewed by Shaun Barry (paraphrased from voice summary)"
+DRAFT_LABEL = "Drafted by Ara, pending LO review by Shaun Barry"
 LO_TAG = "lo_review_2026_11_11"
 for it in items:
     for e in v.iter_errors(it):
@@ -39,7 +40,11 @@ for it in items:
     if LO_TAG in it.get("tags", []):
         if not ref: err(it["id"], "LO-reviewed item missing reference_response")
         if not any("LO review by Shaun Barry" in g for g in it["source_grounding"]): err(it["id"], "LO-reviewed item missing LO review grounding")
+    # Since Nov 13 2026 every item must carry a reference response (Shaun's request).
+    if not ref: err(it["id"], "missing reference_response (every item needs one)")
     if ref:
+        if ref["provenance"] == "ara_draft" and ref["label"] != DRAFT_LABEL:
+            err(it["id"], "ara_draft reference has wrong label")
         if ref["provenance"] == "lo_paraphrased" and ref["label"] != PARA_LABEL:
             err(it["id"], "paraphrased reference has wrong label")
         if ref["provenance"] == "lo_verbatim" and "verbatim" not in ref["label"].lower():

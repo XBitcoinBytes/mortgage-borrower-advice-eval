@@ -187,9 +187,10 @@
           "enum": [
             "lo_verbatim",
             "lo_paraphrased",
-            "author_draft"
+            "author_draft",
+            "ara_draft"
           ],
-          "description": "lo_verbatim = quotes the LO reviewer's own words (requires quote_source); lo_paraphrased = written from a summary of the LO review; author_draft = not yet LO-reviewed."
+          "description": "lo_verbatim = quotes the LO reviewer's own words (requires quote_source); lo_paraphrased = written from a summary of the LO review; author_draft = not yet LO-reviewed; ara_draft = drafted by Ara (chief of staff) against the item rubric, pending LO review by Shaun Barry."
         },
         "label": {
           "type": "string",
