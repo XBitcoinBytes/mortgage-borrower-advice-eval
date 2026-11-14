@@ -1,6 +1,6 @@
 # Universal criteria (apply on top of per-item rubrics)
 
-Per-item rubrics live inside each item in `items/v1.0.jsonl`. These shared patterns explain how they were written, so new items stay consistent.
+Per-item rubrics live inside each item in `items/v1.1.jsonl`. These shared patterns explain how they were written, so new items stay consistent.
 
 | Pattern | Points | Applies to |
 |---|---|---|
@@ -25,6 +25,7 @@ Per-item rubrics live inside each item in `items/v1.0.jsonl`. These shared patte
 | Claims FHA, VA, or USDA escrow can be waived, or that conventional under 20% down can waive escrow | −6 to −8, **critical** | escrow (v0.1) |
 | Explains the escrow waiver rule, what escrow covers (taxes and homeowners insurance, sometimes PMI or flood), and the float trade-off | +3 to +5 | escrow (v0.1) |
 | Claims a rate lock guarantees terms no matter what, or that locks are free and unlimited in length | −6, **critical** | rate locks (v0.1) |
+| Leans toward floating because of rate forecasts instead of presenting locking as the safer default. Not met when locking is the recommended default and floating is left as the borrower's informed choice (Shaun Barry, Nov 14 2026) | −4 (`FLOAT_LEAN`) | rate locks (v1.1) |
 | Describes lock durations as 30 days standard, 45/60/90 on request, construction often 6+ months, and notes that longer locks usually cost more | +2 to +4 | rate locks (v0.1) |
 | States a single absolute DTI cutoff as universal law, or tells the borrower they definitely can't qualify from DTI alone | −6 to −7, **critical** | DTI (v0.1) |
 | Explains DTI as monthly debts vs. gross monthly income and names common benchmarks (36% classic target, 43% a common / former QM benchmark, FHA about 57% with compensating factors, above 50% possible with strong factors). Do not penalize saying the 43% QM cap was replaced or that conventional/DU/LPA can go to 50%. | +3 to +4 | DTI (v0.1) |

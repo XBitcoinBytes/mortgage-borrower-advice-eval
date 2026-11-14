@@ -1,0 +1,26 @@
+{
+  "candidates_graded": 8,
+  "candidate_lo_verdicts": 8,
+  "candidate_rubric_scores": {
+    "MBA-001": 0.0,
+    "MBA-002": 0.267,
+    "MBA-003": 1.0,
+    "MBA-004": 0.0,
+    "MBA-005": 0.818,
+    "MBA-006": 0.5,
+    "MBA-007": 0.0,
+    "MBA-008": 0.0
+  },
+  "candidate_critical_fails": 4,
+  "candidate_mean_rubric_score": 0.323,
+  "lo_rubric_agreement": "8/8",
+  "references_graded": 78,
+  "references_full_marks": 76,
+  "reference_mean_rubric_score": 0.998,
+  "reference_min_rubric_score": 0.923,
+  "reference_critical_fails": 0,
+  "reference_provenance": {
+    "lo_approved": 36,
+    "lo_paraphrased": 42
+  }
+}

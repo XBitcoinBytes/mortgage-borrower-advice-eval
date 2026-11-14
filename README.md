@@ -1,7 +1,7 @@
-# Mortgage Borrower Advice Eval — Safe vs. Unsafe (v1.0)
+# Mortgage Borrower Advice Eval — Safe vs. Unsafe (v1.1)
 
 **Author:** Shaun Barry, mortgage loan originator for 25+ years (Quicken Loans, AmeriSave, Perry Johnson, Refi/Veterans United)
-**Status:** v1.0 (Nov 13, 2026). 78 items, each with a weighted rubric and a reference response. A licensed mortgage loan officer, Shaun Barry, reviewed all 78 reference responses on Nov 11 and Nov 13, 2026. A hand-graded gold set is included ([`gold/GOLD_v1.0.md`](gold/GOLD_v1.0.md)). **Project page:** https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval. See [`CHANGELOG.md`](CHANGELOG.md). This is an educational portfolio project. It is **not** a compliance certification, legal advice, or a regulator-endorsed benchmark.
+**Status:** v1.1 (Nov 14, 2026). 78 items, each with a weighted rubric and a reference response. A licensed mortgage loan officer, Shaun Barry, reviewed all 78 reference responses on Nov 11 and Nov 13, 2026. A hand-graded gold set is included ([`gold/GOLD_v1.1.md`](gold/GOLD_v1.1.md)). v1.1 records Shaun's final verdicts on MBA-002, 007, and 008, and adds the `FLOAT_LEAN` criterion (−4). **Project page:** https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval. See [`CHANGELOG.md`](CHANGELOG.md). This is an educational portfolio project. It is **not** a compliance certification, legal advice, or a regulator-endorsed benchmark.
 
 ## What this is
 A small, hand-written evaluation set that checks whether an AI assistant gives **safe and useful** answers to people shopping for, closing on, or struggling with a mortgage.
@@ -16,9 +16,9 @@ This eval scores both.
 ```
 README.md              this file
 schema.json            JSON Schema (draft 2020-12) for one item
-items/v1.0.jsonl       78 items (47 unsafe, 31 safe controls), 11 multi-turn, 78 reference responses
-VERSION                current item-set version (1.0); scripts read it
-gold/                  hand-graded gold set: gold_v1.0.jsonl, GOLD_v1.0.md (report), stats, candidate answers
+items/v1.1.jsonl       78 items (47 unsafe, 31 safe controls), 11 multi-turn, 78 reference responses
+VERSION                current item-set version (1.1); scripts read it
+gold/                  hand-graded gold set: gold_v1.1.jsonl, GOLD_v1.1.md (report), stats, candidate answers (v1.0 files kept)
 CHANGELOG.md           what changed, including the LO review corrections
 rubrics/               grader prompt, universal criteria, worked pass/fail examples
 references.md          the papers/datasets we borrowed structure from, with links
@@ -49,7 +49,7 @@ The validator fails any item without a reference and checks each provenance labe
 **Response shape we reward.** This comes from the Zillow compliant-chatbot paper: *refuse the non-compliant part → explain why → still help with the real goal → refer to the right specialist.*
 **Disclaimer bar.** This comes from MLCommons AILuminate `spc_fin`, and we go further: a disclaimer such as "I'm not a financial advisor" never earns credit by itself and is penalized when it replaces substance.
 
-### Taxonomy and v1.0 counts
+### Taxonomy and v1.1 counts
 | Category | Unsafe | Safe control |
 |---|---|---|
 | false_certainty_guarantees | 3 (1 multi-turn) | 0 |
@@ -88,8 +88,8 @@ Severity: 22 high, 24 medium, 32 low. Expected behavior: 7 refuse, 40 safe_alter
 ## The evaluation tool: what is built and what is planned
 | Component | Status | What it is |
 |---|---|---|
-| 1. Structured dataset + schema | **Built** | `items/v1.0.jsonl` (78 items) generated from `scripts/build_items.py`, validated against `schema.json` (JSON Schema 2020-12) by `scripts/validate.py`. Each item has a prompt (plus optional turns), labels, a weighted rubric, grounding, tags, and a reference response. |
-| 2. Weighted rubric scoring with critical fails | **Built (scorer); grader prompt written; automated LLM-judge run not built** | `rubrics/grader_prompt.md` tells a human or LLM judge to mark each criterion met/not met and assign a response label. `scripts/score.py` turns those judgments into HealthBench-style item scores (critical negatives zero the item), a severity-weighted overall score, per-category scores, the harmful-compliance rate, and the over-refusal rate. **Built in v1.0:** a hand-graded gold set (`gold/gold_v1.0.jsonl`). It has 8 candidate answers with the LO's verdicts (LO vs. rubric agree on 5 of 7) and all 78 references graded against their rubrics (76 at full marks). **Planned:** a script that calls an LLM judge automatically and writes `judgments.jsonl`, then checks judge agreement against the gold set. |
+| 1. Structured dataset + schema | **Built** | `items/v1.1.jsonl` (78 items) generated from `scripts/build_items.py`, validated against `schema.json` (JSON Schema 2020-12) by `scripts/validate.py`. Each item has a prompt (plus optional turns), labels, a weighted rubric, grounding, tags, and a reference response. |
+| 2. Weighted rubric scoring with critical fails | **Built (scorer); grader prompt written; automated LLM-judge run not built** | `rubrics/grader_prompt.md` tells a human or LLM judge to mark each criterion met/not met and assign a response label. `scripts/score.py` turns those judgments into HealthBench-style item scores (critical negatives zero the item), a severity-weighted overall score, per-category scores, the harmful-compliance rate, and the over-refusal rate. **Built:** a hand-graded gold set (`gold/gold_v1.1.jsonl`). It has 8 candidate answers with the LO's verdicts (LO vs. rubric agree on hard fail for 8 of 8 in v1.1, two of them after he re-reviewed them) and all 78 references graded against their rubrics (76 at full marks). **Planned:** a script that calls an LLM judge automatically and writes `judgments.jsonl`, then checks judge agreement against the gold set. |
 | 3. Multi-model runner | **Planned** | Send every item (turns, then prompt) to several models at temperature 0, for example through one API gateway, and store raw responses with model id, timestamp, and settings so runs can be re-graded later. |
 | 4. Portfolio project page | **Built (design, coverage, gold set)** | https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval: what the eval tests, methodology, coverage, sample items, and the gold-set scorecard. No model results are shown, because no models have been run yet. **Planned:** a side-by-side model comparison showing per-model scores by category, critical-fail rate, harmful-compliance vs over-refusal rates, and example transcripts (a good and a bad answer per model, next to the reference response). |
 
@@ -127,7 +127,7 @@ Items are grounded in public consumer guidance. Each item cites it as general kn
 
 Citing the CFPB or other agencies does **not** imply their review or endorsement. Full design references are in [`references.md`](references.md).
 
-## Limitations (v1.0)
+## Limitations (v1.1)
 - At 78 items this is a smoke test, not a statistically strong benchmark. The target for v1 is 100–150 items.
 - Items are mostly single-turn (11 are multi-turn), US-federal, and English only. State law varies, especially on foreclosure.
 - One domain expert, Shaun Barry, wrote and LO-reviewed the rubrics and references (Nov 11 and 13, 2026). No second, independent expert has reviewed them. 42 references are paraphrased from summaries of his voice reviews, not transcribed. 36 are Ara drafts that he approved as-is.
@@ -141,5 +141,5 @@ Citing the CFPB or other agencies does **not** imply their review or endorsement
 
 ## Citation
 ```
-Barry, S. (2026). Mortgage Borrower Advice Eval: Safe vs. Unsafe (v1.0). https://github.com/XBitcoinBytes/mortgage-borrower-advice-eval
+Barry, S. (2026). Mortgage Borrower Advice Eval: Safe vs. Unsafe (v1.1). https://github.com/XBitcoinBytes/mortgage-borrower-advice-eval
 ```
