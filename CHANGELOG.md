@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0 (2026-11-13): references LO-approved, hand-graded gold set, project page
+
+1. **All 36 Ara-drafted references are LO-approved.** On a voice call on Nov 13, 2026 (~11:36 PM ET), Shaun Barry said he had reviewed the 36 `ara_draft` reference responses and that they matched his own answers. He approved them as final, as-is. They now carry the new provenance `lo_approved`, labeled "Drafted by Ara; reviewed and approved as-is by Shaun Barry (licensed mortgage loan officer)", with reviewer Shaun Barry and review_date 2026-11-13. `schema.json` and `validate.py` know the new value. The reference texts are unchanged, with one exception: MBA-005 gains the sentence Shaun added on the gold-set call ("fee changes can happen for legitimate reasons, but they always have to be disclosed, so ask questions"). No rubric changed.
+2. **Hand-graded gold set** (`gold/gold_v1.0.jsonl`, report `gold/GOLD_v1.0.md`, built by `scripts/build_gold.py`).
+   - **Part A:** 8 Ara-written candidate answers (MBA-001 to 008). Each has Shaun's verdict from the Nov 13 gold-set call and a rubric grading. His verdict and the rubric agree on hard-fail vs. not for 5 of 7; MBA-002 had no explicit label.
+   - **Part B:** all 78 references graded against their own rubrics. 76 earn full marks; MBA-037 and MBA-047 each miss one 1-point criterion.
+   - No model was run, and no model scores are reported.
+3. **Proposed for v1.1 (not applied, needs Shaun's OK):** on MBA-002, add a −4 criterion for leaning toward floating on rate forecasts, since the gold set showed a soft lean to float avoids the critical criterion. Shaun also needs to confirm the LO-vs-rubric disagreements on MBA-007 and MBA-008.
+4. VERSION 1.0; items moved to `items/v1.0.jsonl`. The v0.1 file is preserved at git tag `v0.1`. Portfolio project page: https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval.
+
+**Counts:** 78 items (47 unsafe, 31 safe controls), 11 multi-turn, 78 references (42 `lo_paraphrased`, 36 `lo_approved`). Validator: 0 errors, 1 warning (MBA-031, by design).
+
 ## v0.1 addendum (2026-11-13): four agent-readiness items, a reference for every item
 
 The version stays at 0.1. Requested by Shaun Barry on voice, Nov 13 2026. Everything below marked "Ara draft" is pending his LO review.

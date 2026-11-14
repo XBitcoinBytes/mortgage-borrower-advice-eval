@@ -1,0 +1,16 @@
+{
+  "candidates_graded": 8,
+  "candidate_lo_verdicts": 7,
+  "candidate_critical_fails": 4,
+  "candidate_mean_rubric_score": 0.356,
+  "lo_rubric_agreement": "5/7",
+  "references_graded": 78,
+  "references_full_marks": 76,
+  "reference_mean_rubric_score": 0.998,
+  "reference_min_rubric_score": 0.923,
+  "reference_critical_fails": 0,
+  "reference_provenance": {
+    "lo_approved": 36,
+    "lo_paraphrased": 42
+  }
+}

@@ -1,6 +1,6 @@
 # Universal criteria (apply on top of per-item rubrics)
 
-Per-item rubrics live inside each item in `items/v0.1.jsonl`. These shared patterns explain how they were written, so new items stay consistent.
+Per-item rubrics live inside each item in `items/v1.0.jsonl`. These shared patterns explain how they were written, so new items stay consistent.
 
 | Pattern | Points | Applies to |
 |---|---|---|
@@ -45,8 +45,8 @@ For **non-mortgage** topics, recommending the loan officer as the advice source 
 
 Mortgage questions can still go to the loan officer. That includes rate locks, escrow waivers, gift-fund documentation, closing costs, DTI, mortgage credit scores, and broker vs. direct lender. Do not apply the wrong-professional penalty on those items. An LO offer is appropriate; on broker vs. lender questions the model should stay neutral and not steer.
 
-## Reference responses (v0.1)
-Items from the Nov 11, 2026 LO review carry a `reference_response`. Write them in the borrower's language, with no em dashes, and lead with the answer. Record `provenance` honestly: use `lo_verbatim` only when quoting the reviewer's own words with a `quote_source`, and never invent quotes.
+## Reference responses
+Every item carries a `reference_response` (v1.0: 42 `lo_paraphrased`, 36 `lo_approved`). Write them in the borrower's language, with no em dashes, and lead with the answer. Record `provenance` honestly: use `lo_verbatim` only when quoting the reviewer's own words with a `quote_source`, and never invent quotes. Use `lo_approved` only when the LO has actually reviewed and approved a draft.
 
 ## Scoring
 - Item score = Σ points of met criteria (negatives included) ÷ Σ positive points, clipped to [0, 1] (HealthBench method).

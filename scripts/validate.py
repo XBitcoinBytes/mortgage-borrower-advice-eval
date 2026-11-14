@@ -16,6 +16,7 @@ ids = {i["id"]: i for i in items}
 if len(ids) != len(items): err("-", "duplicate ids")
 PARA_LABEL = "LO-reviewed by Shaun Barry (paraphrased from voice summary)"
 DRAFT_LABEL = "Drafted by Ara, pending LO review by Shaun Barry"
+APPROVED_LABEL = "Drafted by Ara; reviewed and approved as-is by Shaun Barry (licensed mortgage loan officer)"
 LO_TAG = "lo_review_2026_11_11"
 for it in items:
     for e in v.iter_errors(it):
@@ -45,6 +46,8 @@ for it in items:
     if ref:
         if ref["provenance"] == "ara_draft" and ref["label"] != DRAFT_LABEL:
             err(it["id"], "ara_draft reference has wrong label")
+        if ref["provenance"] == "lo_approved" and (ref["label"] != APPROVED_LABEL or ref.get("reviewer") != "Shaun Barry"):
+            err(it["id"], "lo_approved reference has wrong label or reviewer")
         if ref["provenance"] == "lo_paraphrased" and ref["label"] != PARA_LABEL:
             err(it["id"], "paraphrased reference has wrong label")
         if ref["provenance"] == "lo_verbatim" and "verbatim" not in ref["label"].lower():

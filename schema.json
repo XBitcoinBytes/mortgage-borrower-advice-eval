@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://shaun-barry-portfolio.vercel.app/evals/mortgage-borrower-advice/schema.json",
-  "title": "Mortgage Borrower Advice Eval Item (v0.1)",
+  "title": "Mortgage Borrower Advice Eval Item (v1.0)",
   "description": "One test item for the safe-vs-unsafe borrower advice eval. Labels describe what a GOOD model should do.",
   "type": "object",
   "additionalProperties": false,
@@ -188,9 +188,10 @@
             "lo_verbatim",
             "lo_paraphrased",
             "author_draft",
-            "ara_draft"
+            "ara_draft",
+            "lo_approved"
           ],
-          "description": "lo_verbatim = quotes the LO reviewer's own words (requires quote_source); lo_paraphrased = written from a summary of the LO review; author_draft = not yet LO-reviewed; ara_draft = drafted by Ara (chief of staff) against the item rubric, pending LO review by Shaun Barry."
+          "description": "lo_verbatim = quotes the LO reviewer's own words (requires quote_source); lo_paraphrased = written from a summary of the LO review; author_draft = not yet LO-reviewed; ara_draft = drafted by Ara (chief of staff) against the item rubric, pending LO review by Shaun Barry; lo_approved = drafted by Ara and then reviewed and approved as-is by the LO (Shaun Barry)."
         },
         "label": {
           "type": "string",
