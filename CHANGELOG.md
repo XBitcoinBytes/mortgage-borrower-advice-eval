@@ -1,5 +1,10 @@
 # Changelog
 
+## Notes (2026-11-16): provisional first model run documented
+
+The published item set is unchanged (v1.1, 78 items). The README now records a provisional Nov 15, 2026 Codex (`gpt-6.1-sol`) run: 85.1% overall and 98.5% on safety, 77 of 78 items, LLM-judged, not yet reviewed by Shaun Barry. A separate 525-item question bank is in progress toward 1,000; it is not part of this repository, and no model scores come from it.
+
+
 ## v1.1 (2026-11-14): Shaun's verdicts on MBA-002/007/008, FLOAT_LEAN criterion
 
 Decisions from Shaun Barry's voice call on Nov 14 2026 (~1:20 PM ET):
