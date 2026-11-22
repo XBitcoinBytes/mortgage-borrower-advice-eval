@@ -157,8 +157,8 @@ Citing the CFPB or other agencies does **not** imply their review or endorsement
 - Regulatory details reflect general knowledge as of 2026. Verify them against current rules before relying on them.
 
 ## License
-- **Items, rubrics, and docs** (Shaun Barry's original work): proposed **CC BY 4.0**. Reuse and adaptation are allowed with attribution ("Mortgage Borrower Advice Eval, Shaun Barry, 2026").
-- **Scripts:** proposed MIT.
+- **Items, rubrics, and docs** (Shaun Barry's original work): [CC BY 4.0](LICENSE-CC-BY-4.0). Reuse and adaptation are allowed with attribution ("Mortgage Borrower Advice Eval, Shaun Barry, 2026").
+- **Scripts:** [MIT](LICENSE-MIT). Copyright (c) 2026 Shaun Barry.
 - Third-party papers and datasets referenced here keep their own licenses. Nothing from them is redistributed.
 
 ## Citation
