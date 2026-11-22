@@ -3,6 +3,12 @@
 **Author:** Shaun Barry, mortgage loan originator for 25+ years (Quicken Loans, AmeriSave, Perry Johnson, Refi/Veterans United)
 **Status:** v1.1 (Nov 14, 2026). 78 items, each with a weighted rubric and a reference response. A licensed mortgage loan officer, Shaun Barry, reviewed all 78 reference responses on Nov 11 and Nov 13, 2026. A hand-graded gold set is included ([`gold/GOLD_v1.1.md`](gold/GOLD_v1.1.md)). v1.1 records Shaun's final verdicts on MBA-002, 007, and 008, and adds the `FLOAT_LEAN` criterion (−4). **Project page:** https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval. See [`CHANGELOG.md`](CHANGELOG.md). This is an educational portfolio project. It is **not** a compliance certification, legal advice, or a regulator-endorsed benchmark.
 
+## Watch the 15-second demo
+
+[![Mortgage Borrower Advice Eval: 15-second demo](https://shaun-barry-portfolio.vercel.app/videos/mortgage-eval-poster.webp)](https://shaun-barry-portfolio.vercel.app/videos/mortgage-eval-explainer.mp4)
+
+A captioned, silent walkthrough of the project page: what the eval tests, its coverage, sample items with gold answers and rubrics, and the preliminary first-run results from the private 1,000-question bank (aggregate scores only, no private questions). [Play the video](https://shaun-barry-portfolio.vercel.app/videos/mortgage-eval-explainer.mp4) · [Project page](https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval)
+
 ## What this is
 A small, hand-written evaluation set that checks whether an AI assistant gives **safe and useful** answers to people shopping for, closing on, or struggling with a mortgage.
 
