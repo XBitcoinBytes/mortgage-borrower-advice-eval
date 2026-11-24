@@ -1,12 +1,12 @@
 # Changelog
 
-## Notes (2026-11-22): 1,000-question private bank complete; single headline result
+## Notes (2026-11-22)
 
-The published item set is unchanged (v1.1, 78 items). The private question bank built from this eval is complete at 1,000 questions. The README's headline result is now Codex (`gpt-6.1-sol`) 80.3% and Grok 4.7 67.8% on its 814 held-out questions (preliminary, single LLM judge). The Nov 15 provisional run and the in-progress bank counts noted below are historical and superseded.
+The published item set is unchanged (v1.1, 78 items). The full question bank stays private.
 
 ## Notes (2026-11-16): provisional first model run documented
 
-The published item set is unchanged (v1.1, 78 items). The README now records a provisional Nov 15, 2026 Codex (`gpt-6.1-sol`) run: 85.1% overall and 98.5% on safety, 77 of 78 items, LLM-judged, not yet reviewed by Shaun Barry. A separate 525-item question bank is in progress toward 1,000; it is not part of this repository, and no model scores come from it.
+The published item set is unchanged (v1.1, 78 items). The README now records a provisional Nov 15, 2026 Codex (`gpt-6.1-sol`) run: 85.1% overall and 98.5% on safety, 77 of 78 items, LLM-judged, not yet reviewed by Shaun Barry.
 
 
 ## v1.1 (2026-11-14): Shaun's verdicts on MBA-002/007/008, FLOAT_LEAN criterion

@@ -9,7 +9,7 @@
 
 [![Mortgage Borrower Advice Eval: 33-second narrated demo](https://shaun-barry-portfolio.vercel.app/videos/mortgage-eval-poster.webp)](https://shaun-barry-portfolio.vercel.app/videos/mortgage-eval-explainer.mp4)
 
-A narrated, captioned walkthrough of the project page: what the eval tests, its coverage, sample items with gold answers and rubrics, and the preliminary first-run results from the private 1,000-question bank (aggregate scores only, no private questions). [Play the video](https://shaun-barry-portfolio.vercel.app/videos/mortgage-eval-explainer.mp4) · [Project page](https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval)
+A narrated, captioned walkthrough of the project page: what the eval tests, its coverage, and sample items with gold answers and rubrics. [Play the video](https://shaun-barry-portfolio.vercel.app/videos/mortgage-eval-explainer.mp4) · [Project page](https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval)
 
 ## What this is
 A small, hand-written evaluation set that checks whether an AI assistant gives **safe and useful** answers to people shopping for, closing on, or struggling with a mortgage.
@@ -98,15 +98,10 @@ Severity: 22 high, 24 medium, 32 low. Expected behavior: 7 refuse, 40 safe_alter
 |---|---|---|
 | 1. Structured dataset + schema | **Built** | `items/v1.1.jsonl` (78 items) generated from `scripts/build_items.py`, validated against `schema.json` (JSON Schema 2020-12) by `scripts/validate.py`. Each item has a prompt (plus optional turns), labels, a weighted rubric, grounding, tags, and a reference response. |
 | 2. Weighted rubric scoring with critical fails | **Built (scorer); grader prompt written; automated LLM-judge run not built** | `rubrics/grader_prompt.md` tells a human or LLM judge to mark each criterion met/not met and assign a response label. `scripts/score.py` turns those judgments into HealthBench-style item scores (critical negatives zero the item), a severity-weighted overall score, per-category scores, the harmful-compliance rate, and the over-refusal rate. **Built:** a hand-graded gold set (`gold/gold_v1.1.jsonl`). It has 8 candidate answers with the LO's verdicts (LO vs. rubric agree on hard fail for 8 of 8 in v1.1, two of them after he re-reviewed them) and all 78 references graded against their rubrics (76 at full marks). **Planned:** a script that calls an LLM judge automatically and writes `judgments.jsonl`, then checks judge agreement against the gold set. |
-| 3. Multi-model runner | **Started** | A first Codex CLI (`gpt-6.1-sol`) run on these items (Nov 15, 2026) is superseded by the 1,000-question benchmark results; see Headline result below. Additional model adapters are still to be wired up so later runs stay reproducible. |
+| 3. Multi-model runner | **Started** | A first Codex CLI (`gpt-6.1-sol`) run on these items was completed Nov 15, 2026. Additional model adapters are still to be wired up so later runs stay reproducible. |
 | 4. Portfolio project page | **Built (design, coverage, gold set, headline result)** | https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval: what the eval tests, methodology, coverage, sample items, the gold-set scorecard, and the headline result, clearly labeled. **Planned:** a side-by-side model comparison showing per-model scores by category, critical-fail rate, harmful-compliance vs over-refusal rates, and example transcripts (a good and a bad answer per model, next to the reference response). |
 
-## Headline result
-
-This eval grew into a larger private benchmark of 1,000 questions, built, tested, and supervised by a licensed loan officer. On its **814 held-out questions** (never published), **Codex (`gpt-6.1-sol`) passed 80.3%** (95% CI 77.5–82.9%) and Grok 4.7 passed 67.8% (95% CI 64.5–70.9%). These figures are **preliminary**: one LLM judge, one answer per question. They are scores on the held-out questions, not on the 78 public items in this repo. The question bank stays private.
-
-An earlier provisional Codex run on these 78 items (Nov 15, 2026) is superseded and no longer reported as a headline; see `CHANGELOG.md` for the history.
-
+The full question bank stays private.
 
 ## How to score
 1. Run each model on every item. Send `turns` (if present) followed by `prompt`. Use temperature 0, or average across ≥3 samples.
