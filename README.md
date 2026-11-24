@@ -1,5 +1,7 @@
 # Mortgage Borrower Advice Eval — Safe vs. Unsafe (v1.1)
 
+**Live site:** https://mortgageeval.com
+
 **Author:** Shaun Barry, mortgage loan originator for 25+ years (Quicken Loans, AmeriSave, Perry Johnson, Refi/Veterans United)
 **Status:** v1.1 (Nov 14, 2026). 78 items, each with a weighted rubric and a reference response. A licensed mortgage loan officer, Shaun Barry, reviewed all 78 reference responses on Nov 11 and Nov 13, 2026. A hand-graded gold set is included ([`gold/GOLD_v1.1.md`](gold/GOLD_v1.1.md)). v1.1 records Shaun's final verdicts on MBA-002, 007, and 008, and adds the `FLOAT_LEAN` criterion (−4). **Project page:** https://shaun-barry-portfolio.vercel.app/mortgage-advice-eval. See [`CHANGELOG.md`](CHANGELOG.md). This is an educational portfolio project. It is **not** a compliance certification, legal advice, or a regulator-endorsed benchmark.
 
